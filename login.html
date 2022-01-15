@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1,minimum-scale=0.5,maximum-scale=1,user-scalable=no" />
+    <title>登录</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/loginn.css">
+
+<body>
+
+    <div class="login_logo">
+        <h1>Login</h1>
+  <form name="myForm" action="home.html" onsubmit="return validateForm_index()" method="post">
+    <label for="name">用户名</label>
+    <input type="text" id="name"placeholder="用户名" >
+    <label for="password">密码</label>
+    <input type="text" id="password"  placeholder="密码" >
+    <input type="checkbox" id="remember1"><span class="check">记住用户名</span><input type="checkbox"  id="remember2"><span class="check">记住密码</span><input type="checkbox"  id="remember3"><span class="check">一天内免登录</span>
+
+    <div id="org"></div>
+    <a class="link" href="./index.html" onclick="javascript:checkCookie(document.getElementById('name').value);return validateForm_index()">登录</a>
+    <a class="link" href="">注册</a>
+  </form>
+</div>
+
+<script type="text/javascript" src="./js/testClk_index.js"></script>
+    <script type="text/javascript" src="./js/validateForm_index.js"></script>
+<script type="text/javascript" src="./js/cookie.js"></script>
+
+</body>
+</html>

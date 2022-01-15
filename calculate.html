@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script language="JavaScript" src="./js/calculate.js"></script>
+  <title>通货膨胀计算器</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+
+  <style type="text/css">
+    @font-face {
+      font-family: 'webfont';
+      font-display: swap;
+      src: url('./webfont_2sclewnk3bj/webfont.eot');
+      /* IE9*/
+      src: url('./webfont_2sclewnk3bj/webfont.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+        url('./webfont_2sclewnk3bj/webfont.woff2') format('woff2'),
+        url('./webfont_2sclewnk3bj/webfont.woff') format('woff'),
+        /* chrome、firefox */
+        url('./webfont_2sclewnk3bj/webfont.ttf') format('truetype'),
+        /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+        url('./webfont_2sclewnk3bj/webfont.svg#after') format('svg');
+      /* iOS 4.1- */
+    }
+
+    .web-font {
+      font-family: "webfont" !important;
+      font-size: 32px;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      -webkit-text-stroke-width: 0.2px;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  </style>
+
+  <style>
+    #bj {
+      background: linear-gradient(#fee, rgb(150, 201, 201)) repeat;
+      height: 400px;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: auto auto auto auto auto auto;
+      grid-gap: 10px;
+      background-color: #2196F3;
+      padding: 10px;
+    }
+
+    .grid-container>div {
+      background-color: rgba(255, 255, 255, 0.8);
+      text-align: center;
+      padding: 20px 0;
+      font-size: 30px;
+    }
+
+    .item1 {
+      grid-column: 1 / span 2;
+    }
+
+
+    .item2 {
+      grid-column: 3 / span 7;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>通货膨胀影响投资收益计算器</h1>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"
+    integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+    integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+    crossorigin="anonymous"></script>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">导航栏</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="./关于.html">计算器说明页 <span class="sr-only">(current)</span></a></li>
+        <li><a href="./index.html">关于通货膨胀</a></li>
+        <li><a href="./calculate.html">计算器</a></li>
+        <li><a href="./blog.html">blog页</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+            aria-expanded="false">不同国家 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">中国</a></li>
+            <li><a href="#">美国</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">日本</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">委内瑞拉</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+            aria-expanded="false">友友网站 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">jelly's</a></li>
+            <li><a href="#">吴new</a></li>
+            <li><a href="#">龙！🐉</a></li>
+            <li role="separator" class="divider"></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">搜索</button>
+      </form>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+  </nav>
+
+  <button type="button" class="btn btn-primary">标准计算器</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <button type="button" class="btn btn-primary">逆置计算器</button>
+
+
+
+
+
+
+  <article id="bj">
+    <div>
+      <i class="web-font" style="text-align:left;">中国通货膨胀情况介绍:</i>
+      <p style="text-align: left;">
+      <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在2010年2月,我国通货膨胀率创下了16个月以来的最高纪录，达到了<b>2.7%</b>，甚至超出分析师做出的预期。自此我国通货膨胀现象一直存在，没有得到实质的改善。</i><br>
+      <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;居民消费价格指数持续走高，通货膨胀的压力日趋加大，持续到2011年末，我国CPI指数才有了较大的回落，总之，中国经济的巨型航母已经启动，然而近几年来的通货膨胀已成为一个急需解决的问题。</i>
+      </p>
+    </div>
+    <div class="grid-container">
+    <div class="item1">
+      <form name="calform">
+        <fieldset>
+          <legend>标准计算器：</legend>
+          <div>
+            <b>&nbsp;&nbsp;&nbsp;&nbsp;初始投资金额:&nbsp;&nbsp;</b>
+            <input id="price" placeholder="0">
+          </div>
+          <br>
+          <div style="text-align:center">
+            <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;投资期数:&nbsp;&nbsp;</b>
+            <input id="year" placeholder="0">
+          </div>
+          <br>
+          <div style="text-align:center">
+            <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;预计利率:&nbsp;&nbsp;</b>
+            <input id="interest" placeholder="0">
+          </div>
+          <br>
+          <div style="text-align:center">
+            <b>预计通货膨胀率:&nbsp;&nbsp;</b>
+            <input id="inflation" placeholder="3%">
+          </div>
+          <br>
+
+          <div class="checkbox">
+            <label>
+              <input id="iffuli"type="checkbox" checked="checked"> 复利计算
+            </label>
+          </div>
+
+          <div class="form-group">
+            <div>
+              <button type="button" class="btn btn-default" onclick="calculate()">计算</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="item2">
+      <h2>计算结果如下</h2>
+      <table border="3"
+       cellpadding="10">
+        <tr>
+            <td style=" width:80px;">1 </td>
+            <td>到期本利总额 </td>
+            <td><img src="./img/formula1.png" alt="formula1" style="padding:0px;border: none;margin:0px;vertical-align: bottom;"></td>
+            <td style=" width:80px;" class="result">0</td>
+        </tr>
+        <tr>
+            <td style=" width:80px;">2 </td>
+            <td>期末实际购买力</td>
+            <td><img src="./img/formula2.png" alt="formula2" style="padding:0px;border: none;margin:0px;vertical-align: bottom;"></td>
+            <td style=" width:80px;" class="result">0</td>
+        </tr>
+        <tr>
+          <td style=" width:80px;">3 </td>
+          <td>实际收益率</td>
+          <td><img src="./img/formula3.png" alt="formula3" style="padding:0px;border: none;margin:0px;vertical-align: bottom;"></td>
+          <td style=" width:80px;"class="result">0</td>
+      </tr>
+      </table>
+      <br>
+      <p>结果说明：</p>
+    </div>
+    </div>
+  </article>
+
+
+
+
+
+
+</body>
+
+</html>

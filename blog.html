@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>通货膨胀计算器</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <style>
+        @font-face {
+            font-family: 'webfont';
+            font-display: swap;
+            src: url('//at.alicdn.com/t/webfont_c79dwke677g.eot');
+            /* IE9*/
+            src: url('//at.alicdn.com/t/webfont_c79dwke677g.eot?#iefix') format('embedded-opentype'),
+                /* IE6-IE8 */
+                url('//at.alicdn.com/t/webfont_c79dwke677g.woff2') format('woff2'),
+                url('//at.alicdn.com/t/webfont_c79dwke677g.woff') format('woff'),
+                /* chrome、firefox */
+                url('//at.alicdn.com/t/webfont_c79dwke677g.ttf') format('truetype'),
+                /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+                url('//at.alicdn.com/t/webfont_c79dwke677g.svg#站酷小薇体') format('svg');
+            /* iOS 4.1- */
+        }
+
+        .web-font {
+            font-family: "webfont" !important;
+            font-size: 16px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+
+    <link rel="stylesheet" href="css/blog.css">
+
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"
+        integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+        crossorigin="anonymous"></script>
+    <h1>通货膨胀影响投资收益计算器</h1>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">导航栏</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="./关于.html">计算器说明页 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="./index.html">关于通货膨胀</a></li>
+                    <li><a href="./calculate.html">计算器</a></li>
+                    <li><a href="./blog.html">blog页</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">不同国家 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">中国</a></li>
+                            <li><a href="#">美国</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">日本</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">委内瑞拉</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">友友网站 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">jelly's</a></li>
+                            <li><a href="#">吴new</a></li>
+                            <li><a href="#">龙！🐉</a></li>
+                            <li role="separator" class="divider"></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">搜索</button>
+                </form>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="Grid">
+        <div class="Grid-cell u-1of4">
+            <h1 class="sansserif">历史文档归档</h1>
+            <ul>
+                <li>
+                    <a herf="#" class="caidan">2021年9月</a>
+                    <span>&nbsp;&nbsp;&nbsp;|</span>
+                </li>
+                <li>
+                    <a herf="#" class="caidan">2021年10月</a>
+                    <span>|</span>
+                </li>
+                <li>
+                    <a herf="#" class="caidan">2021年11月</a>
+                    <span>|</span>
+                </li>
+                <li>
+                    <a herf="#" class="caidan">2021年12月</a>
+                    <span>|</span>
+                </li>
+                <li>
+                    <a herf="#" class="caidan">更多.....&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                    <span>|</span>
+                </li>
+            </ul>
+            <!--清除浮动，若未清除浮动，div中的内容会跟随在菜单列表的后面-->
+            <div class="clearfloat"></div>
+            <div class="all" id='all'>
+                <div class="screen" id="screen">
+                    <ul id="ul">
+                        <li><img src="./img/t1.jpg" width="500" height="200" /></li>
+                        <li><img src="./img/t2.jpg" width="500" height="200" /></li>
+                        <li><img src="./img/t3.jpg" width="500" height="200" /></li>
+                        <li><img src="./img/t4.jpg" width="500" height="200" /></li>
+                        <li><img src="./img/t5.jpg" width="500" height="200" /></li>
+                    </ul>
+                    <ol></ol>
+                    <div id="arr"><span id="left">
+                            << /span><span id="right">></span></div>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="Grid-cell">
+            <h1 class="serif">上传新的文章</h1>
+            <span class="InputAddOn-item"><strong>文章标题</strong></span>
+            <input class="InputAddOn-field">
+            <button class="InputAddOn-item">（：</button>
+            <br><br>
+            <p style="font-size: large;">文章内容</p>
+            <textarea rows="10" cols="30" class="InputAddOn-field"></textarea>
+            <p style="font-size: large;">文章标签</p>
+            <form>
+                <input type="checkbox" value="jinrong"><i>金融</i>
+                <input type="checkbox" value="lishi"><i>历史</i>
+                <input type="checkbox" value="jisuan"><i>计算</i>
+            </form>
+            <span class="InputAddOn-item"><strong>文章设置</strong></span>
+            <form class="InputAddOn-field">
+                <select name="cars">
+                    <option>对所有人可见</option>
+                    <option>只对会员可见</option>
+                    <option selected>永久保存</option>
+                    <option>仅一个月内可见</option>
+                    <option>个人推荐</option>
+                </select>
+            </form><br>
+            <input type="submit" value="立即上传文章">
+            <br><br><br><br>
+        </div>
+        <br><br><br><br>
+        <div class="Grid-cell u-1of3">
+            <div style="background-image: url(./img/css_sprites.png);">
+                <br><br><br>
+                <i class="web-font">web真的好难啊啊啊啊，我真的真的要挂科了！</i><br>
+                <i>web真的好难啊啊啊啊，我真的真的要挂科了！</i><br><br><br>
+            </div>
+            <div style="background:blue; border:solid 10px white;"><br><br><br><br><br><br></div>
+            <div style="background:darkgrey; border:solid 10px white;"><br><br><br><br><br><br></div>
+            <div style="background:darkseagreen; border:solid 10px white;"><br><br><br><br><br><br></div>
+
+        </div>
+
+    </div>
+
+
+</body>
+
+
+</html>
+
+<script>
+    //需求：无缝轮播图
+    //步骤：
+    //1.老三步。获取相关元素。
+    //2.补齐相互盒子
+    //1.复制第一张图片所在的li，填入所在的ul中。
+    //2.生成相关的ol中的li。
+    //3.点亮第一个ol中的li。
+    //3.鼠标放到小方块儿上，轮播图片。
+    //4.添加定时器。
+    //5.左右切换的按钮。
+
+
+
+
+
+
+    //1.老三步。获取相关元素。
+    var box = document.getElementById("all");
+    var ul = box.children[0].children[0];
+    var ol = box.children[0].children[1];
+    var ulLiArr = ul.children;
+    //2.补齐相互盒子
+    //1.复制第一张图片所在的li，填入所在的ul中。
+    var newLi = ulLiArr[0].cloneNode(true);
+    ul.appendChild(newLi);
+    //2.生成相关的ol中的li。
+    for (var i = 0; i < ulLiArr.length - 1; i++) {
+        var newOlLi = document.createElement("li");
+        newOlLi.innerHTML = i + 1;
+        ol.appendChild(newOlLi);
+    }
+    //3.点亮第一个ol中的li。
+    var olLiArr = ol.children;
+    ol.children[0].className = "current";
+    //3.鼠标放到小方块儿上，轮播图片。
+    for (var i = 0; i < olLiArr.length; i++) {
+        olLiArr[i].index = i;
+        olLiArr[i].onmouseover = function () {
+            for (var j = 0; j < olLiArr.length; j++) {
+                olLiArr[j].className = "";
+            }
+            olLiArr[this.index].className = "current";
+            animate(ul, -this.index * ul.children[0].offsetWidth);
+            key = square = this.index;
+        }
+    }
+    //4.添加定时器。
+    var timer = null;
+    var key = 0;
+    var square = 0;
+    timer = setInterval(autoPlay, 1000);
+
+
+    function autoPlay() {
+        key++;
+        square++;
+        if (key > olLiArr.length) {
+            key = 1;
+            ul.style.left = 0;
+        }
+        animate(ul, -key * ul.children[0].offsetWidth);
+
+
+        square = square > olLiArr.length - 1 ? 0 : square;
+        for (var j = 0; j < olLiArr.length; j++) {
+            olLiArr[j].className = "";
+        }
+        olLiArr[square].className = "current";
+    }
+    //5.鼠标移开开启定时器，鼠标放上去开启定时器。
+    box.onmouseover = function () {
+        clearInterval(timer);
+    }
+    box.onmouseout = function () {
+        timer = setInterval(autoPlay, 1000);
+    }
+    //6.左右切换的按钮。
+    var btnArr = box.children[0].children[2].children;
+    btnArr[0].onclick = function () {
+        key--;
+        square--;
+        if (key < 0) {
+            key = 4;
+            ul.style.left = -5 * ul.children[0].offsetWidth + "px";
+        }
+        animate(ul, -key * ul.children[0].offsetWidth);
+
+
+        square = square < 0 ? olLiArr.length - 1 : square;
+        for (var j = 0; j < olLiArr.length; j++) {
+            olLiArr[j].className = "";
+        }
+        olLiArr[square].className = "current";
+    }
+    btnArr[1].onclick = function () {
+        autoPlay();
+    }
+
+
+
+
+
+
+
+
+    //  基本封装
+    function animate(obj, target) {
+        clearInterval(obj.timer);
+        var speed = obj.offsetLeft < target ? 15 : -15;
+        obj.timer = setInterval(function () {
+            var result = target - obj.offsetLeft;
+            obj.style.left = obj.offsetLeft + speed + "px";
+            if (Math.abs(result) <= 15) {
+                obj.style.left = target + "px";
+                clearInterval(obj.timer);
+            }
+        }, 10);
+    }
+
+
+
+
+</script>

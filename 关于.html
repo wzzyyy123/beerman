@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>通货膨胀计算器</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <style type="text/css">
+      @font-face {
+       font-family: 'webfont';
+       font-display: swap;
+       src: url('./webfont_2sclewnk3bj/webfont.eot'); /* IE9*/
+       src: url('./webfont_2sclewnk3bj/webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./webfont_2sclewnk3bj/webfont.woff2') format('woff2'),
+       url('./webfont_2sclewnk3bj/webfont.woff') format('woff'), /* chrome、firefox */
+       url('./webfont_2sclewnk3bj/webfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+       url('./webfont_2sclewnk3bj/webfont.svg#after') format('svg'); /* iOS 4.1- */
+     }
+       
+             .web-font{
+               font-family:"webfont" !important;
+               font-size:32px;font-style:normal;
+               -webkit-font-smoothing: antialiased;
+               -webkit-text-stroke-width: 0.2px;
+               -moz-osx-font-smoothing: grayscale;
+           }
+           table{margin:auto;}
+         </style>
+      
+
+
+
+
+
+ 
+
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <h1>通货膨胀影响投资收益计算器</h1>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">导航栏</a>
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+             <li class="active"><a href="./关于.html">计算器说明页 <span class="sr-only">(current)</span></a></li>
+              <li><a href="./index.html">关于通货膨胀</a></li>
+              <li><a href="./calculate.html">计算器</a></li>
+              <li><a href="./blog.html">blog页</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">不同国家 <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">中国</a></li>
+                  <li><a href="#">美国</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">日本</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">委内瑞拉</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">友友网站 <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">jelly's</a></li>
+                  <li><a href="#">吴new</a></li>
+                  <li><a href="#">龙！🐉</a></li>
+                  <li role="separator" class="divider"></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="navbar-form navbar-left">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+              </div>
+              <button type="submit" class="btn btn-default">搜索</button>
+            </form>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+
+      <table width=80% >
+        <tr>
+        <td colspan="2" style="background-color:bisque;">
+        <h1>通货膨胀以及计算器使用说明</h1>
+        </td>
+        </tr>
+        
+        <tr>
+        <td style="background-color:burlywood;width:100px;vertical-align:top;">
+        <h2>导航</h2><br>
+        <i><a href="#tips">通货膨胀介绍</a></i><br><br>
+        <i><a href="#parameter">参数说明</a></i><br><br>
+        <i><a href="#math">公式展示</a></i><br><br>
+        <i><a href="#result">结果说明</a></i>
+        </td>
+        <td style="background-color:cornsilk;height:200px;width:400px;vertical-align:top;">
+          <div id="tips">
+          <h4><b>通货膨胀介绍</b></h4>
+          通货膨胀则是能够造成一国货币贬值的该国国内主要商品的物价持续、普遍、不可逆的上涨。<br>
+          存款或投资时，一方面金额在变大，另一方面货币也因为通货膨胀速率在贬值。<br>
+          通过在计算器可以知道，你的本金在不同的投资方式下，你到底有没有获得实际的收益，实际的收益率又是多少。
+          </div>
+          <br><br>
+          <div id="#parameter">
+            <h4><b>参数说明</b></h4>
+            <dl>
+              <dt>输入参数</dt>
+              <dd>- 初始投资金额 P（present value）</dd>
+              <dd>- 投资期数 N（number）</dd>
+              <dd>- 预计年利率	I（interest rate）</dd>
+              <dd>- 预计通货膨胀率	INF（inflation）</dd>
+              <dd><i><small>通货膨胀率（inflation）说明：<br>
+                &emsp;某一国家货币贬值造成物价上涨这一现象的速率。
+                通胀速率与年利率持平时，资金的实际购买力不变；通胀速率大于年利率时，资金的实际购买力降低。
+                通胀速率可以为负值，用来表示通货紧缩。代表国家有荷兰、日本、北欧各国等。
+                <b>在本计算器中默认值为我国的3%</b></small></i></dd>
+              <dt>输出参数</dt>
+              <dd>- 到期本利总额	F（final value）</dd>
+              <dd>- 期末实际购买力	PP(purchasing power)</dd>
+              <dd>- 实际收益率	RR（real rate）</dd>
+              </dl>
+          </div>
+          <br><br>
+          <div id="math">
+            <h4><b>数学公式</b></h4>
+          数学公式到时候找个库引入一下
+          </div>
+          <br><br>
+          <div id="result">
+            <h4><b>结果说明</b></h4>
+          贴个计算器运行的结果图再进行说明即可
+            
+          </div>
+        </td>
+        </tr>
+        
+        <tr>
+        <td colspan="2" style="background-color:#FFA500;text-align:center;">
+        By wzzyyy</td>
+        </tr>
+
+
+   
+
+   
+  </body>
+</html>
