@@ -1,0 +1,161 @@
+.background_img{
+    background: url(../img/css_sprites.png) no-repeat;
+    background-size: auto;
+}
+
+
+
+
+.caidan {
+    font-size: large;
+}
+
+.Grid {
+    display: flex;
+    background-color: aquamarine;
+}
+
+.Grid-cell {
+    flex: 1;
+    text-align: center;
+}
+
+.Grid-cell.u-full {
+    flex: 0 0 100%;
+}
+
+.Grid-cell.u-1of2 {
+    flex: 0 0 50%;
+}
+
+.Grid-cell.u-1of3 {
+    flex: 0 0 33.3333%;
+    background-color: bisque;
+}
+
+.Grid-cell.u-1of4 {
+    flex: 0 0 25%;
+    background-color: bisque;
+}
+
+.InputAddOn {
+    display: flex;
+}
+
+.InputAddOn-field {
+    flex: 1;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+    /*display: inline-block;*/
+    float: left;
+    margin-right: 40px;
+}
+
+li span {
+    margin-left: 54px;
+}
+
+ul {
+    height: 30px;
+    line-height: 20px;
+
+}
+
+.clearfloat {
+    clear: both;
+}
+
+h1.serif {
+    font-family: "Times New Roman", Times, serif;
+}
+
+h1.sansserif {
+    font-family: Impact, Charcoal, sans-serif;
+    font-style: oblique;
+}
+
+
+/*轮播图CSS*/
+.all {
+    width: 400px;
+    height: 200px;
+    padding: 7px;
+    border: 1px solid #ccc;
+    margin: 100px auto;
+    position: relative;
+}
+
+.screen {
+    width: 400px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.screen li {
+    width: 400px;
+    height: 200px;
+    overflow: hidden;
+    float: left;
+}
+
+.screen ul {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 3000px;
+}
+
+.all ol {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.all ol li {
+    float: left;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border: 1px solid #ccc;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.all ol li.current {
+    background: yellow;
+}
+
+
+/*#arr {display: none;}*/
+#arr span {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    margin-top: -20px;
+    background: #000;
+    cursor: pointer;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-family: '黑体';
+    font-size: 30px;
+    color: #fff;
+    opacity: 0.3;
+    border: 1px solid #fff;
+}
+
+#arr #right {
+    right: 5px;
+    left: auto;
+}
